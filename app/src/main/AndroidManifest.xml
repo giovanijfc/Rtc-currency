@@ -18,6 +18,8 @@
 
         <activity android:name=".ui.view.HomeActivity"/>
 
+        <activity android:name=".ui.view.StepsInfoActivity"/>
+
     </application>
 
 </manifest>

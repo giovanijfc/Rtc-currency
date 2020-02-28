@@ -1,4 +1,6 @@
 package com.example.rtc_currency.ui.view_model
 
-class SplashViewModel {
+import androidx.lifecycle.ViewModel
+
+class SplashViewModel: ViewModel() {
 }
