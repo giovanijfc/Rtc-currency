@@ -19,7 +19,7 @@ class StepsInfoActivity: AppCompatActivity() {
             Thread.sleep(2000)
             runOnUiThread {
                 Log.d("LOG ITEM", view_pager.currentItem.toString())
-                view_pager.setCurrentItem(1, true)
+                view_pager.setCurrentItem(0, true)
             }
         }.start()
     }

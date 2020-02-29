@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="@dimen/huge_margin"
+    android:paddingLeft="@dimen/default_padding"
+    android:paddingRight="@dimen/default_padding">
+
+    <RelativeLayout
+        android:id="@+id/layout_description_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_icon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/huge_margin"
+            android:src="@mipmap/ic_app"/>
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/huge_font"
+            android:textColor="@color/text_black"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/image_icon"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/app_name" />
+
+        <TextView
+            android:id="@+id/text_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/high_font"
+            android:textColor="@color/text_black"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/text_title"
+            android:layout_marginTop="@dimen/huge_margin"
+            android:text="Seja bem vindo ao nosso app!" />
+
+        <TextView
+            android:id="@+id/text_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium_font"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/text_sub_title"
+            android:layout_marginTop="@dimen/high_margin"
+            android:textAlignment="center"
+            android:lineSpacingExtra="3dp"
+            android:text="Com este APP você conseguira acompanhar seus cripto ativos em tempo real e muito mais..." />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/huge_margin">
+
+        <TextView
+            android:id="@+id/text_info_slider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="@color/gray"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/high_margin"
+            android:textAlignment="center"
+            android:lineSpacingExtra="3dp"
+            android:layout_marginBottom="@dimen/low_margin"
+            android:text="Arraste para esquerda ou clique no botão ..." />
+
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:textColor="@color/white"
+            android:layout_below="@id/text_info_slider"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/medium_font"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/shape_button_gradient_blue_rounded"
+            android:text="Próximo"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_below="@+id/button_next"
+            android:gravity="center">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/shape_button_gradient_blue_rounded"
+                />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="@dimen/low_margin"
+                android:background="@drawable/shape_button_gradient_blue_rounded_empty" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="@dimen/low_margin"
+                android:background="@drawable/shape_button_gradient_blue_rounded_empty" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

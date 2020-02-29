@@ -18,6 +18,7 @@ class HomeViewModel(application: Application): AndroidViewModel(application) {
         if (isFirstInitialization) {
             val stepsInfoIntent = Intent(context, StepsInfoActivity::class.java)
             stepsInfoIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            stepsInfoIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             context.startActivity(stepsInfoIntent)
         }
     }

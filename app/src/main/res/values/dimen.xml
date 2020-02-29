@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="low_margin">5dp</dimen>
+    <dimen name="default_margin">10dp</dimen>
+    <dimen name="medium_margin">15dp</dimen>
+    <dimen name="high_margin">20dp</dimen>
+    <dimen name="large_margin">25dp</dimen>
+    <dimen name="huge_margin">30dp</dimen>
+
+    <dimen name="low_font">7sp</dimen>
+    <dimen name="default_font">11sp</dimen>
+    <dimen name="medium_font">17sp</dimen>
+    <dimen name="high_font">20sp</dimen>
+    <dimen name="large_font">24sp</dimen>
+    <dimen name="huge_font">30sp</dimen>
+
+    <dimen name="low_padding">5dp</dimen>
+    <dimen name="default_padding">10dp</dimen>
+    <dimen name="medium_padding">15dp</dimen>
+    <dimen name="high_padding">20dp</dimen>
+    <dimen name="large_padding">25dp</dimen>
+    <dimen name="huge_padding">30dp</dimen>
+</resources>
