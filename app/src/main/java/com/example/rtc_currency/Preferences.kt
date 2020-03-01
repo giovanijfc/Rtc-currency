@@ -1,22 +1,22 @@
 package com.example.rtc_currency
 
 import android.content.Context
-import android.content.SharedPreferences
+import android.content.SharedPreferences.Editor
 
-class Preferences(private val context: Context) {
 
-    private val PREFERENCE_NAME = "MY_PREFER_CUSTOM_HEHE"
+class Preferences(context: Context) {
+
+    private val appPreferences = context.getSharedPreferences("APP_PREFERENCES", 0)
 
     private val FIRST_INITIALIZATION = "FIRST_INITIALIZATION"
 
     fun isFirstInitialization() : Boolean {
-        val pref = context.getSharedPreferences(PREFERENCE_NAME, 0)
-        return pref.getBoolean(FIRST_INITIALIZATION, true)
+        return appPreferences.getBoolean(FIRST_INITIALIZATION, true)
     }
 
     fun setIsFirstInitialization(value: Boolean) {
-        val pref = context.getSharedPreferences(PREFERENCE_NAME, 0)
-        pref.edit().putBoolean(FIRST_INITIALIZATION, value)
-        pref.edit().commit()
+        val edit: Editor = appPreferences.edit()
+        edit.putBoolean(FIRST_INITIALIZATION, value)
+        edit.apply()
     }
 }
