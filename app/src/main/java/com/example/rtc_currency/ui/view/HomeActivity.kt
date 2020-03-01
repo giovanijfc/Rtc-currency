@@ -38,7 +38,12 @@ class HomeActivity : BaseActivity() {
         val manager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         val buttonSearch = menu?.findItem(R.id.button_search)
         val searchView = buttonSearch?.actionView as SearchView
-        searchView.setBackgroundColor(ContextCompat.getColor(this@HomeActivity, R.color.colorPrimaryDark))
+        searchView.setBackgroundColor(
+            ContextCompat.getColor(
+                this@HomeActivity,
+                R.color.colorPrimaryDark
+            )
+        )
         searchView.setSearchableInfo(manager.getSearchableInfo(componentName))
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
