@@ -20,4 +20,12 @@ class StepsInfoActivity : AppCompatActivity() {
 
         view_pager.adapter = StepsInfoPagerAdapter(this, view_pager)
     }
+
+    override fun onBackPressed() {
+        if (view_pager.currentItem > 0) {
+            view_pager.setCurrentItem(view_pager.currentItem - 1, true)
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
