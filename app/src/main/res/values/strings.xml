@@ -11,4 +11,7 @@
     <string name="alerts">Alerts</string>
     <string name="track_your_assets">Track your assets even if you dont look at them…</string>
     <string name="adds_alerts_to_tracking">Add alerts to keep track of assets and receive notifications…</string>
+    <string name="select_your_exchange">SELECT AN EXCHANGE</string>
+    <string name="search">Search</string>
+    <string name="exchanges">Exchanges</string>
 </resources>

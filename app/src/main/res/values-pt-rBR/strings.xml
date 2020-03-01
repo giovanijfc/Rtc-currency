@@ -12,4 +12,7 @@
     <string name="alerts">Alertas</string>
     <string name="track_your_assets">Acompanhe seu ativos mesmo não os olhando…</string>
     <string name="adds_alerts_to_tracking">Adicione alertas para acompanhar sempre os ativos e receba notificações…</string>
+    <string name="select_your_exchange">SELECIONE UMA EXCHANGE</string>
+    <string name="search">Buscar</string>
+    <string name="exchanges">Exchanges</string>
 </resources>

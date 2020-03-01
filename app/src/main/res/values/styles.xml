@@ -8,4 +8,13 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <style name="AppTheme.WithToolbar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
 </resources>

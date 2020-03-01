@@ -12,6 +12,11 @@ class RTCButtonGradientBlue(context: Context, attrs: AttributeSet) :
 
     init {
         setTextColor(ContextCompat.getColor(context, R.color.white))
-        setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.shape_button_gradient_blue_rounded))
+        setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                context,
+                R.drawable.shape_button_gradient_blue_rounded
+            )
+        )
     }
 }
