@@ -1,8 +1,12 @@
 package com.example.rtc_currency.ui.view
 
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import kotlinx.android.synthetic.main.component_toolbar_find.view.*
+import com.example.rtc_currency.R
+import kotlinx.android.synthetic.main.component_toolbar_search.view.*
 
 open class BaseActivity : AppCompatActivity() {
 

@@ -13,6 +13,8 @@ class SplashActivity : AppCompatActivity() {
 
         Thread {
             val homeIntent = Intent(this, HomeActivity::class.java)
+            homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             Thread.sleep(500)
             startActivity(homeIntent)
         }.start()

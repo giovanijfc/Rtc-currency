@@ -1,7 +1,9 @@
 package com.example.rtc_currency.ui.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -10,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.rtc_currency.R
 import com.example.rtc_currency.ui.view_model.HomeViewModel
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.component_toolbar_find.view.*
+import kotlinx.android.synthetic.main.component_toolbar_search.view.*
 
 class HomeActivity : BaseActivity() {
 
@@ -25,7 +27,11 @@ class HomeActivity : BaseActivity() {
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        return super.onCreateOptionsMenu(menu)
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        toolbar.button_search.setOnClickListener {
+
+        }
+
+        return super.onPrepareOptionsMenu(menu)
     }
 }
