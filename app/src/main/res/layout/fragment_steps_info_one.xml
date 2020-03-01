@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
     android:background="@color/white"
-    android:paddingTop="@dimen/huge_margin"
     android:paddingLeft="@dimen/default_padding"
+    android:paddingTop="@dimen/huge_margin"
     android:paddingRight="@dimen/default_padding">
 
     <RelativeLayout
@@ -19,44 +20,44 @@
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/huge_margin"
-            android:src="@mipmap/ic_app"/>
+            android:src="@mipmap/ic_app" />
 
         <TextView
             android:id="@+id/text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="@dimen/huge_font"
-            android:textColor="@color/text_black"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/image_icon"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/default_margin"
-            android:text="@string/app_name" />
+            android:text="@string/app_name"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/huge_font"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/text_sub_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="@dimen/high_font"
-            android:textColor="@color/text_black"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/text_title"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/huge_margin"
-            android:text="@string/welcome_in_app" />
+            android:text="@string/welcome_in_app"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/high_font"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/text_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/medium_font"
-            android:textColor="@color/black"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/text_sub_title"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/high_margin"
-            android:textAlignment="center"
             android:lineSpacingExtra="3dp"
-            android:text="@string/with_this_app_you_will" />
+            android:text="@string/with_this_app_you_will"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_font" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -69,40 +70,35 @@
             android:id="@+id/text_info_slider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14dp"
-            android:textColor="@color/gray"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/high_margin"
-            android:textAlignment="center"
-            android:lineSpacingExtra="3dp"
             android:layout_marginBottom="@dimen/low_margin"
-            android:text="@string/drag_left_or_click_the_button" />
+            android:lineSpacingExtra="3dp"
+            android:text="@string/drag_left_or_click_the_button"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textSize="14dp" />
 
-        <Button
+        <com.example.rtc_currency.components.RTCButtonGradientBlue
             android:id="@+id/button_next"
-            android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/huge_margin"
+            android:layout_marginRight="@dimen/huge_margin"
             android:layout_below="@id/text_info_slider"
-            android:layout_centerHorizontal="true"
-            android:textSize="@dimen/medium_font"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:background="@drawable/shape_button_gradient_blue_rounded"
-            android:text="@string/next"/>
+            android:text="@string/next"
+            android:layout_width="match_parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_margin"
             android:layout_below="@+id/button_next"
+            android:layout_marginTop="@dimen/medium_margin"
             android:gravity="center">
 
             <View
                 android:layout_width="8dp"
                 android:layout_height="8dp"
-                android:background="@drawable/shape_button_gradient_blue_rounded"
-                />
+                android:background="@drawable/shape_button_gradient_blue_rounded" />
 
             <View
                 android:layout_width="8dp"
