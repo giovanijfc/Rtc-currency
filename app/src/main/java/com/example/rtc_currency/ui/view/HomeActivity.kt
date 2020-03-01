@@ -14,22 +14,24 @@ import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.example.rtc_currency.R
+import com.example.rtc_currency.database.models.Exchange
 import com.example.rtc_currency.ui.view_model.HomeViewModel
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.component_toolbar_search.view.*
 
 class HomeActivity : BaseActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(bundle: Bundle?) {
+        super.onCreate(bundle)
         setContentView(R.layout.activity_home)
 
         setToolbar(toolbar as Toolbar, getString(R.string.exchanges))
 
-        val homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+        val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         homeViewModel.checkFirstInitializationApp()
+
+        val exchanges = intent.extras?.getParcelableArrayList<Exchange>("EXCHANGES")
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
