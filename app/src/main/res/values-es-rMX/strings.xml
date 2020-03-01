@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RTC Moneda</string>
+    <string name="welcome_in_app">Bienvenido a nuestra aplicación!</string>
+    <string name="with_this_app_you_will">Con esta aplicación podrás rastrear tus activos de cifrado en tiempo real y más…</string>
+    <string name="next">Siguiente</string>
+    <string name="drag_left_or_click_the_button">Arrastre hacia la izquierda o haga clic en el botón…</string>
+</resources>

@@ -43,7 +43,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/text_title"
             android:layout_marginTop="@dimen/huge_margin"
-            android:text="Seja bem vindo ao nosso app!" />
+            android:text="@string/welcome_in_app" />
 
         <TextView
             android:id="@+id/text_description"
@@ -56,7 +56,7 @@
             android:layout_marginTop="@dimen/high_margin"
             android:textAlignment="center"
             android:lineSpacingExtra="3dp"
-            android:text="Com este APP você conseguira acompanhar seus cripto ativos em tempo real e muito mais..." />
+            android:text="@string/with_this_app_you_will" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -76,7 +76,7 @@
             android:textAlignment="center"
             android:lineSpacingExtra="3dp"
             android:layout_marginBottom="@dimen/low_margin"
-            android:text="Arraste para esquerda ou clique no botão ..." />
+            android:text="@string/drag_left_or_click_the_button" />
 
         <Button
             android:id="@+id/button_next"
@@ -89,7 +89,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:background="@drawable/shape_button_gradient_blue_rounded"
-            android:text="Próximo"/>
+            android:text="@string/next"/>
 
         <LinearLayout
             android:layout_width="match_parent"
