@@ -11,4 +11,15 @@
     android:gravity="center"
     app:titleTextColor="@color/white">
 
+    <com.example.rtc_currency.components.RTCTextBold
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="@dimen/high_font"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:paddingLeft="@dimen/huge_padding"
+        android:paddingTop="-8dp"
+        android:text="TESTE"/>
+
 </androidx.appcompat.widget.Toolbar>
