@@ -2,8 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/tools"
     android:background="@color/white"
     android:paddingLeft="@dimen/default_padding"
     android:paddingTop="@dimen/huge_margin"
@@ -22,7 +20,7 @@
             android:layout_marginTop="@dimen/huge_margin"
             android:src="@mipmap/ic_app" />
 
-        <TextView
+        <com.example.rtc_currency.components.RTCTextBold
             android:id="@+id/text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,10 +29,9 @@
             android:layout_marginTop="@dimen/default_margin"
             android:text="@string/app_name"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/huge_font"
-            android:textStyle="bold" />
+            android:textSize="@dimen/huge_font" />
 
-        <TextView
+        <com.example.rtc_currency.components.RTCTextBold
             android:id="@+id/text_sub_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,10 +40,9 @@
             android:layout_marginTop="@dimen/huge_margin"
             android:text="@string/welcome_in_app"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/high_font"
-            android:textStyle="bold" />
+            android:textSize="@dimen/high_font" />
 
-        <TextView
+        <com.example.rtc_currency.components.RTCText
             android:id="@+id/text_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,7 +62,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/huge_margin">
 
-        <TextView
+        <com.example.rtc_currency.components.RTCText
             android:id="@+id/text_info_slider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,12 +77,12 @@
 
         <com.example.rtc_currency.components.RTCButtonGradientBlue
             android:id="@+id/button_next"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
+            android:layout_below="@id/text_info_slider"
             android:layout_marginLeft="@dimen/huge_margin"
             android:layout_marginRight="@dimen/huge_margin"
-            android:layout_below="@id/text_info_slider"
-            android:text="@string/next"
-            android:layout_width="match_parent" />
+            android:text="@string/next" />
 
         <LinearLayout
             android:layout_width="match_parent"
