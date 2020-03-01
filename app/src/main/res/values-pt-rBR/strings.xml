@@ -5,4 +5,11 @@
     <string name="with_this_app_you_will">Com este APP você conseguira acompanhar seus cripto ativos em tempo real e muito mais…</string>
     <string name="next">Próximo</string>
     <string name="drag_left_or_click_the_button">Arraste para esquerda ou clique no botão…</string>
+    <string name="real_time">Em tempo real</string>
+    <string name="start">Começar</string>
+    <string name="track_your_assets_in_real_time">Acompanhe seus ativos em tempo real…</string>
+    <string name="choose_your_exchange">Escolha sua exchange onde deseja analisar o ativo e seja feliz!</string>
+    <string name="alerts">Alertas</string>
+    <string name="track_your_assets">Acompanhe seu ativos mesmo não os olhando…</string>
+    <string name="adds_alerts_to_tracking">Adicione alertas para acompanhar sempre os ativos e receba notificações…</string>
 </resources>

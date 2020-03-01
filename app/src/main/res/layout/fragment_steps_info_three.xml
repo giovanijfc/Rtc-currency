@@ -2,15 +2,101 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark">
+    android:background="@color/white"
+    android:paddingLeft="@dimen/default_padding"
+    android:paddingTop="@dimen/huge_margin"
+    android:paddingRight="@dimen/default_padding">
 
+    <RelativeLayout
+        android:id="@+id/layout_description_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <com.example.rtc_currency.components.RTCButtonGradientBlue
-        android:id="@+id/button_next"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginLeft="@dimen/huge_margin"
-        android:layout_marginRight="@dimen/huge_margin"
-        android:text="@string/next" />
+        <ImageView
+            android:id="@+id/image_icon"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/huge_margin"
+            android:layout_marginBottom="@dimen/low_margin"
+            android:src="@drawable/ic_alert_gold" />
+
+        <com.example.rtc_currency.components.RTCTextBold
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/alerts"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/huge_font" />
+
+        <com.example.rtc_currency.components.RTCTextBold
+            android:id="@+id/text_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/huge_margin"
+            android:text="@string/track_your_assets"
+            android:gravity="center"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/high_font" />
+
+        <com.example.rtc_currency.components.RTCText
+            android:id="@+id/text_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_sub_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/high_margin"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/adds_alerts_to_tracking"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_font" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/huge_margin">
+
+        <com.example.rtc_currency.components.RTCButtonGradientBlue
+            android:id="@+id/button_next"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="@dimen/huge_margin"
+            android:layout_marginRight="@dimen/huge_margin"
+            android:text="@string/start" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_next"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:gravity="center">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/shape_button_gradient_blue_rounded" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="@dimen/low_margin"
+                android:background="@drawable/shape_button_gradient_blue_rounded" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="@dimen/low_margin"
+                android:background="@drawable/shape_button_gradient_blue_rounded" />
+
+        </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

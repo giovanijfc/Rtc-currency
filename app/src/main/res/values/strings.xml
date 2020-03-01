@@ -4,4 +4,11 @@
     <string name="with_this_app_you_will">With this APP you will be able to track your crypto assets in real time and much more…</string>
     <string name="next">Next</string>
     <string name="drag_left_or_click_the_button">Drag left or click the button…</string>
+    <string name="real_time">In real time</string>
+    <string name="start">Start</string>
+    <string name="track_your_assets_in_real_time">Track your assets in real time…</string>
+    <string name="choose_your_exchange">Choose your exchange where you want to analyze the asset and be happy!</string>
+    <string name="alerts">Alerts</string>
+    <string name="track_your_assets">Track your assets even if you dont look at them…</string>
+    <string name="adds_alerts_to_tracking">Add alerts to keep track of assets and receive notifications…</string>
 </resources>

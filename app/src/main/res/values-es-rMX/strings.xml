@@ -5,4 +5,11 @@
     <string name="with_this_app_you_will">Con esta aplicación podrás rastrear tus activos de cifrado en tiempo real y más…</string>
     <string name="next">Siguiente</string>
     <string name="drag_left_or_click_the_button">Arrastre hacia la izquierda o haga clic en el botón…</string>
+    <string name="real_time">En tiempo real</string>
+    <string name="start">Empezar</string>
+    <string name="track_your_assets_in_real_time">Rastree sus activos en tiempo real…</string>
+    <string name="choose_your_exchange">¡Elija su intercambio donde quiera analizar el activo y sea feliz!</string>
+    <string name="alerts">Alertas</string>
+    <string name="track_your_assets">Rastree sus activos incluso si no los mira…</string>
+    <string name="adds_alerts_to_tracking">Agregue alertas para realizar un seguimiento de los activos y recibir notificaciones…</string>
 </resources>
