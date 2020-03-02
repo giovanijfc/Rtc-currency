@@ -9,8 +9,11 @@
         layout="@layout/component_toolbar_search" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_list_exchange"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar" />
+        android:layout_below="@+id/toolbar"
+        android:paddingLeft="@dimen/default_margin"
+        android:paddingRight="@dimen/default_margin"/>
 
 </RelativeLayout>

@@ -2,23 +2,19 @@ package com.example.rtc_currency.ui.view
 
 import android.app.SearchManager
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.rtc_currency.R
 import com.example.rtc_currency.database.models.Exchange
+import com.example.rtc_currency.ui.view.adapter.ExchangesItemListAdapter
 import com.example.rtc_currency.ui.view_model.HomeViewModel
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.component_toolbar_search.view.*
 
 class HomeActivity : BaseActivity() {
 
@@ -31,7 +27,15 @@ class HomeActivity : BaseActivity() {
         val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         homeViewModel.checkFirstInitializationApp()
 
-        val exchanges = intent.extras?.getParcelableArrayList<Exchange>("EXCHANGES")
+        val exchanges = intent.extras?.getParcelableArrayList<Exchange>("EXCHANGES") as List<Exchange>
+        configExchangeList(exchanges)
+    }
+
+    private fun configExchangeList(exchanges: List<Exchange>) {
+        val recyclerView = recycle_list_exchange
+        recyclerView.adapter = ExchangesItemListAdapter(exchanges, this)
+        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        recyclerView.layoutManager = layoutManager
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
