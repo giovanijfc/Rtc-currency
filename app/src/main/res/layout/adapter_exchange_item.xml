@@ -37,8 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Binance"
+            android:textColor="@color/white"
             android:textSize="@dimen/huge_font" />
-
 
     </LinearLayout>
 
@@ -61,6 +61,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/default_margin"
             android:gravity="center"
+            android:textColor="@color/white"
             android:text="1"
             android:textSize="@dimen/high_font" />
 
@@ -79,6 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/low_margin"
             android:text="@string/founded_in"
+            android:textColor="@color/white"
             android:textSize="@dimen/high_font" />
 
         <com.example.rtc_currency.components.RTCText
@@ -87,6 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/low_margin"
             android:text="2017"
+            android:textColor="@color/white"
             android:textSize="@dimen/high_font" />
 
     </LinearLayout>
@@ -104,6 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/low_margin"
             android:text="@string/live_at"
+            android:textColor="@color/white"
             android:textSize="@dimen/high_font" />
 
         <com.example.rtc_currency.components.RTCText
@@ -112,6 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/low_margin"
             android:text="China "
+            android:textColor="@color/white"
             android:textSize="@dimen/high_font" />
 
     </LinearLayout>

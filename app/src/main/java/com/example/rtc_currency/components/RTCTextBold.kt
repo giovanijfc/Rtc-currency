@@ -11,6 +11,5 @@ class RTCTextBold(context: Context, attrs: AttributeSet) : AppCompatTextView(con
 
     init {
         setTypeface(Typeface.SANS_SERIF, Typeface.BOLD)
-        setTextColor(ContextCompat.getColor(context, R.color.white))
     }
 }
