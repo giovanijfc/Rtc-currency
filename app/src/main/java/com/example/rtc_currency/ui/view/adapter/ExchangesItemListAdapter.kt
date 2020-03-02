@@ -4,9 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rtc_currency.R
 import com.example.rtc_currency.database.models.Exchange
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.adapter_exchange_item.view.*
 
 class ExchangesItemListAdapter(
@@ -33,6 +35,14 @@ class ExchangesItemListAdapter(
             if (exchange.yearEstablised == null) "N/A" else exchange.yearEstablised.toString()
         exchangeItemAdapterView?.live_at.text =
             if (exchange.country == null) "N/A" else exchange.country.toString()
+
+        if (exchange.image !== null) {
+            Picasso.with(context)
+                .load(exchange.image)
+                .into(exchangeItemAdapterView.imageLogo);
+        }
+
+        exchangeItemAdapterView.imageFavorite.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_star_empty))
     }
 
     override fun getItemCount(): Int {
