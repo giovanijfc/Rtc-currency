@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="190dp"
+    android:layout_width="match_parent"
     android:layout_height="210dp"
     android:background="@drawable/shape_button_gradient_blue_rounded"
     android:paddingLeft="@dimen/medium_margin"
     android:paddingTop="@dimen/default_margin"
-    android:paddingRight="8dp"
-    android:paddingBottom="@dimen/low_margin"
+    android:paddingRight="@dimen/medium_margin"
+    android:paddingBottom="@dimen/default_margin"
     android:layout_marginTop="@dimen/low_margin"
     android:layout_marginBottom="@dimen/low_margin">
 
@@ -18,10 +18,10 @@
 
         <com.example.rtc_currency.components.RTCTextBold
             android:id="@+id/text_name"
-            android:layout_width="135dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Binance"
-            android:textSize="18sp" />
+            android:textSize="@dimen/huge_font" />
 
         <View
             android:layout_width="0dp"
@@ -30,8 +30,8 @@
 
         <ImageView
             android:id="@+id/image_logo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_alert_gold" />
     </LinearLayout>
@@ -45,8 +45,8 @@
         android:layout_marginTop="@dimen/low_margin">
 
         <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
             android:src="@drawable/ic_star_rank" />
 
         <com.example.rtc_currency.components.RTCText
@@ -56,7 +56,7 @@
             android:gravity="center"
             android:layout_marginLeft="@dimen/default_margin"
             android:text="1"
-            android:textSize="15sp" />
+            android:textSize="@dimen/high_font" />
 
     </LinearLayout>
 
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/low_margin"
             android:text="@string/founded_in"
-            android:textSize="14sp" />
+            android:textSize="@dimen/high_font" />
 
         <com.example.rtc_currency.components.RTCTextBold
             android:id="@+id/text_year_founded"
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/low_margin"
             android:text="2017"
-            android:textSize="14sp" />
+            android:textSize="@dimen/high_font" />
 
     </LinearLayout>
 
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/low_margin"
             android:text="@string/live_at"
-            android:textSize="14sp" />
+            android:textSize="@dimen/high_font" />
 
         <com.example.rtc_currency.components.RTCTextBold
             android:id="@+id/text_live_at"
@@ -106,14 +106,14 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/low_margin"
             android:text="China "
-            android:textSize="14sp" />
+            android:textSize="@dimen/high_font" />
 
     </LinearLayout>
 
     <ImageView
         android:id="@+id/image_favorite"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
         android:layout_below="@id/area_country"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"

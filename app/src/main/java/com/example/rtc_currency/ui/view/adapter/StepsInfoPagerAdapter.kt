@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager
 import com.example.rtc_currency.Preferences
 import com.example.rtc_currency.enums.StepsInfoEnum
 import com.example.rtc_currency.ui.view.HomeActivity
+import com.example.rtc_currency.ui.view.SplashActivity
 import kotlinx.android.synthetic.main.fragment_steps_info_one.view.*
 
 class StepsInfoPagerAdapter(private val context: Context, private val viewPager: ViewPager) : PagerAdapter() {
@@ -29,10 +30,10 @@ class StepsInfoPagerAdapter(private val context: Context, private val viewPager:
                 2 -> {
                     preferences.setIsFirstInitialization(false)
 
-                    val homeIntent = Intent(context, HomeActivity::class.java)
-                    homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                    context.startActivity(homeIntent)
+                    val splashIntet = Intent(context, SplashActivity::class.java)
+                    splashIntet.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    splashIntet.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    context.startActivity(splashIntet)
                 }
             }
         }

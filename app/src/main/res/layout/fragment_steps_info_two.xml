@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/image_icon"
             android:layout_centerHorizontal="true"
+            android:gravity="center"
             android:layout_marginTop="@dimen/default_margin"
             android:text="@string/real_time"
             android:textColor="@color/text_black"
@@ -37,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_title"
             android:layout_centerHorizontal="true"
+            android:gravity="center"
             android:layout_marginTop="@dimen/huge_margin"
             android:text="@string/track_your_assets_in_real_time"
             android:textColor="@color/text_black"
@@ -48,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_sub_title"
             android:layout_centerHorizontal="true"
+            android:gravity="center"
             android:layout_marginTop="@dimen/high_margin"
             android:lineSpacingExtra="3dp"
             android:text="@string/choose_your_exchange"
@@ -72,6 +75,7 @@
             android:lineSpacingExtra="3dp"
             android:text="@string/drag_left_or_click_the_button"
             android:textAlignment="center"
+            android:gravity="center"
             android:textColor="@color/gray"
             android:textSize="14dp" />
 

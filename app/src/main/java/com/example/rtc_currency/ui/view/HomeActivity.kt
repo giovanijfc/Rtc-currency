@@ -3,12 +3,15 @@ package com.example.rtc_currency.ui.view
 import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
+import android.util.LayoutDirection
 import android.util.Log
 import android.view.Menu
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.rtc_currency.R
 import com.example.rtc_currency.database.models.Exchange
@@ -34,7 +37,7 @@ class HomeActivity : BaseActivity() {
     private fun configExchangeList(exchanges: List<Exchange>) {
         val recyclerView = recycle_list_exchange
         recyclerView.adapter = ExchangesItemListAdapter(exchanges, this)
-        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL ,false)
         recyclerView.layoutManager = layoutManager
     }
 
