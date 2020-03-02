@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:weigth="http://schemas.android.com/apk/res-auto"
+    android:layout_width="190dp"
+    android:layout_height="190dp"
+    android:background="@drawable/shape_button_gradient_blue_rounded"
+    android:paddingLeft="@dimen/medium_margin"
+    android:paddingRight="8dp"
+    android:paddingTop="@dimen/low_margin"
+    android:paddingBottom="@dimen/low_margin">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <com.example.rtc_currency.components.RTCTextBold
+            android:id="@+id/text_name_exchange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Binance"
+            android:textSize="@dimen/huge_font" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/image_logo_exchange"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_alert_gold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/area_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/low_margin">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_star" />
+
+        <com.example.rtc_currency.components.RTCText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/low_margin"
+            android:text="1"
+            android:textSize="@dimen/medium_font" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/area_founded_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/area_rank"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/low_margin">
+
+        <com.example.rtc_currency.components.RTCText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/low_margin"
+            android:text="@string/founded_in"
+            android:textSize="@dimen/medium_font" />
+
+        <com.example.rtc_currency.components.RTCTextBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/low_margin"
+            android:text="2017"
+            android:textSize="@dimen/medium_font" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/area_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/area_founded_in"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/low_margin">
+
+        <com.example.rtc_currency.components.RTCText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/low_margin"
+            android:text="@string/live_at"
+            android:textSize="@dimen/medium_font" />
+
+        <com.example.rtc_currency.components.RTCTextBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/low_margin"
+            android:text="China "
+            android:textSize="@dimen/medium_font" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/image_favorite_exchange"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_star"
+        android:layout_marginTop="@dimen/low_margin"
+        android:layout_below="@id/area_country"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

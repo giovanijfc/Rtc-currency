@@ -15,4 +15,6 @@
     <string name="select_your_exchange">SELECCIONA UN INTERCAMBIO</string>
     <string name="search">Buscar</string>
     <string name="exchanges">Exchanges</string>
+    <string name="founded_in">Fundada en: </string>
+    <string name="live_at">Live at: </string>
 </resources>

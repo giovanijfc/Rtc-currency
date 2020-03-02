@@ -14,4 +14,6 @@
     <string name="select_your_exchange">SELECT AN EXCHANGE</string>
     <string name="search">Search</string>
     <string name="exchanges">Exchanges</string>
+    <string name="founded_in">Founded in: </string>
+    <string name="live_at">Live at: </string>
 </resources>
