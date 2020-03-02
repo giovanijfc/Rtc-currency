@@ -14,7 +14,7 @@
     <string name="adds_alerts_to_tracking">Agregue alertas para realizar un seguimiento de los activos y recibir notificaciones…</string>
     <string name="select_your_exchange">SELECCIONA UN INTERCAMBIO</string>
     <string name="search">Buscar</string>
-    <string name="exchanges">Exchanges</string>
+    <string name="exchanges">Selecione una Exchange</string>
     <string name="founded_in">Fundada en: </string>
     <string name="show_favorites">Revele favourites</string>
     <string name="live_at">Siede in: </string>
