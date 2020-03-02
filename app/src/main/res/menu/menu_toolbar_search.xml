@@ -6,6 +6,13 @@
         android:icon="@mipmap/ic_search_white"
         android:title="@string/search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="always|collapseActionView"
+        app:showAsAction="ifRoom|collapseActionView"
+        />
+
+    <item
+        android:id="@+id/button_list_favourites"
+        android:icon="@drawable/ic_star"
+        android:title="@string/search"
+        app:showAsAction="ifRoom|collapseActionView"
         />
 </menu>

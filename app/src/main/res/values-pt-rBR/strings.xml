@@ -16,5 +16,6 @@
     <string name="search">Buscar</string>
     <string name="exchanges">Exchanges</string>
     <string name="founded_in">Fundado em: </string>
+    <string name="show_favorites">Ver favoritos</string>
     <string name="live_at">Sede em: </string>
 </resources>

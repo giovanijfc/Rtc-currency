@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.component_toolbar_search.view.*
 open class BaseActivity : AppCompatActivity() {
 
     fun setToolbar(toolbar: Toolbar, textTitle: String) {
-        toolbar.text_title.text = textTitle
+        toolbar.title = textTitle
         setSupportActionBar(toolbar)
     }
 }
