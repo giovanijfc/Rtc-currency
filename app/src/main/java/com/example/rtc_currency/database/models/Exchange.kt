@@ -2,12 +2,18 @@ package com.example.rtc_currency.database.models
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity
 class Exchange() : Parcelable {
 
+    @PrimaryKey(autoGenerate = true)
+    var idDB: Int? = null
     @SerializedName("id")
-    var id: String? = null
+    var remoteId: String? = null
     @SerializedName("name")
     var name: String? = null
     @SerializedName("year_established")
@@ -20,7 +26,8 @@ class Exchange() : Parcelable {
     var trustScoreRank: Int? = null
 
     constructor(parcel: Parcel) : this() {
-        id = parcel.readString()
+        idDB = parcel.readInt()
+        remoteId = parcel.readString()
         name = parcel.readString()
         yearEstablised = parcel.readValue(Int::class.java.classLoader) as? Int
         image = parcel.readString()
@@ -28,12 +35,9 @@ class Exchange() : Parcelable {
         trustScoreRank = parcel.readValue(Int::class.java.classLoader) as? Int
     }
 
-    override fun toString(): String {
-        return "Exchange(id=$id, name=$name, yearEstablised=$yearEstablised, image=$image, country=$country, trustScoreRank=$trustScoreRank)"
-    }
-
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(id)
+        parcel.writeValue(idDB)
+        parcel.writeString(remoteId)
         parcel.writeString(name)
         parcel.writeValue(yearEstablised)
         parcel.writeString(image)
@@ -43,6 +47,10 @@ class Exchange() : Parcelable {
 
     override fun describeContents(): Int {
         return 0
+    }
+
+    override fun toString(): String {
+        return "Exchange(idDB=$idDB, remoteId=$remoteId, name=$name, yearEstablised=$yearEstablised, image=$image, country=$country, trustScoreRank=$trustScoreRank)"
     }
 
     companion object CREATOR : Parcelable.Creator<Exchange> {
