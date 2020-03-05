@@ -18,4 +18,7 @@
     <string name="founded_in">Fundada en: </string>
     <string name="show_favorites">Revele favourites</string>
     <string name="live_at">Siede in: </string>
+    <string name="ok">OK</string>
+    <string name="title_internet_connection">Conexión a internet</string>
+    <string name="description_internet_connection">Comprueba tu conexión a Internet y vuelve de nuevo.</string>
 </resources>

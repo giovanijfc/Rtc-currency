@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/medium_padding">
+
+    <com.example.rtc_currency.components.RTCTextBold
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/high_font"
+        android:text="TextTitle" />
+
+    <com.example.rtc_currency.components.RTCText
+        android:id="@+id/text_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/medium_font"
+        android:text="TextDescription"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_below="@+id/text_title"/>
+
+    <com.example.rtc_currency.components.RTCButtonDialog
+        android:id="@+id/button_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_description"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/huge_margin"
+        android:text="ok" />
+
+</RelativeLayout>

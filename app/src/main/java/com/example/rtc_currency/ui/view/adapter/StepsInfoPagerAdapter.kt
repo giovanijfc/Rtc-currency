@@ -2,7 +2,6 @@ package com.example.rtc_currency.ui.view.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.rtc_currency.Preferences
 import com.example.rtc_currency.enums.StepsInfoEnum
-import com.example.rtc_currency.ui.view.HomeActivity
 import com.example.rtc_currency.ui.view.SplashActivity
 import kotlinx.android.synthetic.main.fragment_steps_info_one.view.*
 

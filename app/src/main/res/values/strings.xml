@@ -17,4 +17,7 @@
     <string name="exchanges">Select a Exchange</string>
     <string name="founded_in">Founded in: </string>
     <string name="live_at">Live at: </string>
+    <string name="ok">OK</string>
+    <string name="title_internet_connection">Internet connection</string>
+    <string name="description_internet_connection">Check your internet connection and come back again.</string>
 </resources>

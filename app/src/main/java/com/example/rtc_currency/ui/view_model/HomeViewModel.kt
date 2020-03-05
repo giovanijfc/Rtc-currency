@@ -3,7 +3,6 @@ package com.example.rtc_currency.ui.view_model
 import android.app.Application
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import com.example.rtc_currency.Preferences
 import com.example.rtc_currency.ui.view.StepsInfoActivity

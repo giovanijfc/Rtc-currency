@@ -3,7 +3,6 @@ package com.example.rtc_currency.ui.view
 import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
-import android.util.LayoutDirection
 import android.util.Log
 import android.view.Menu
 import androidx.appcompat.widget.SearchView
@@ -11,8 +10,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.rtc_currency.R
 import com.example.rtc_currency.database.models.Exchange
 import com.example.rtc_currency.ui.view.adapter.ExchangesItemListAdapter

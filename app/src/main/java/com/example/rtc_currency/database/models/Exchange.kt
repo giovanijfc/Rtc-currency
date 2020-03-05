@@ -2,7 +2,6 @@ package com.example.rtc_currency.database.models
 
 import android.os.Parcel
 import android.os.Parcelable
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
@@ -26,13 +25,17 @@ class Exchange() : Parcelable {
     var trustScoreRank: Int? = null
 
     constructor(parcel: Parcel) : this() {
-        idDB = parcel.readInt()
+        idDB = parcel.readValue(Int::class.java.classLoader) as? Int
         remoteId = parcel.readString()
         name = parcel.readString()
         yearEstablised = parcel.readValue(Int::class.java.classLoader) as? Int
         image = parcel.readString()
         country = parcel.readString()
         trustScoreRank = parcel.readValue(Int::class.java.classLoader) as? Int
+    }
+
+    override fun toString(): String {
+        return "Exchange(idDB=$idDB, remoteId=$remoteId, name=$name, yearEstablised=$yearEstablised, image=$image, country=$country, trustScoreRank=$trustScoreRank)"
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -47,10 +50,6 @@ class Exchange() : Parcelable {
 
     override fun describeContents(): Int {
         return 0
-    }
-
-    override fun toString(): String {
-        return "Exchange(idDB=$idDB, remoteId=$remoteId, name=$name, yearEstablised=$yearEstablised, image=$image, country=$country, trustScoreRank=$trustScoreRank)"
     }
 
     companion object CREATOR : Parcelable.Creator<Exchange> {
