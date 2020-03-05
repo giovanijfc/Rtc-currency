@@ -12,11 +12,10 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.adapter_exchange_item.view.*
 
 class ExchangesItemListAdapter(
-    private val exchanges: List<Exchange>,
+    private val exchanges: List<Exchange>?,
     private val context: Context
 ) :
     RecyclerView.Adapter<ExchangesItemListAdapter.ViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val exchangeItemView =
@@ -27,9 +26,9 @@ class ExchangesItemListAdapter(
 
 
     override fun onBindViewHolder(exchangeItemAdapterView: ViewHolder, position: Int) {
-        val exchange = exchanges.get(position)
+        val exchange = exchanges?.get(position)
 
-        exchangeItemAdapterView?.textName.text = exchange.name!!.replace("/ /g", "")
+        exchangeItemAdapterView?.textName.text = exchange?.name!!.replace("/ /g", "")
         exchangeItemAdapterView?.textRank.text = exchange.trustScoreRank.toString()
         exchangeItemAdapterView?.yearFoundedIn.text =
             if (exchange.yearEstablised == null) "N/A" else exchange.yearEstablised.toString()
@@ -46,7 +45,7 @@ class ExchangesItemListAdapter(
     }
 
     override fun getItemCount(): Int {
-        return exchanges.size
+        return exchanges!!.size
     }
 
     class ViewHolder(exchangeItemAdapterView: View) :

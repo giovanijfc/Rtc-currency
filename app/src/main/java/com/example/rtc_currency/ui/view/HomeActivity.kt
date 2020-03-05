@@ -15,8 +15,10 @@ import com.example.rtc_currency.database.models.Exchange
 import com.example.rtc_currency.ui.view.adapter.ExchangesItemListAdapter
 import com.example.rtc_currency.ui.view_model.HomeViewModel
 import kotlinx.android.synthetic.main.activity_home.*
+import java.util.Observer
 
 class HomeActivity : BaseActivity() {
+
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
@@ -28,10 +30,16 @@ class HomeActivity : BaseActivity() {
         homeViewModel.checkFirstInitializationApp()
 
         val exchanges = intent.extras?.getParcelableArrayList<Exchange>("EXCHANGES") as List<Exchange>
-        configExchangeList(exchanges)
+        homeViewModel.setExchanges(exchanges)
+
+        homeViewModel.exchanges.observe(this, androidx.lifecycle.Observer {
+            exchangesUpdated ->
+            configExchangeList(exchangesUpdated?.toList())
+            Log.i("Passou", "Aqui")
+        })
     }
 
-    private fun configExchangeList(exchanges: List<Exchange>) {
+    private fun configExchangeList(exchanges: List<Exchange>?) {
         val recyclerView = recycle_list_exchange
         recyclerView.adapter = ExchangesItemListAdapter(exchanges, this)
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL ,false)

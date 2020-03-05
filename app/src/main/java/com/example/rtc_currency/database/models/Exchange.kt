@@ -23,6 +23,7 @@ class Exchange() : Parcelable {
     var country: String? = null
     @SerializedName("trust_score_rank")
     var trustScoreRank: Int? = null
+    var isFavorite: Boolean = false
 
     constructor(parcel: Parcel) : this() {
         idDB = parcel.readValue(Int::class.java.classLoader) as? Int
@@ -32,6 +33,7 @@ class Exchange() : Parcelable {
         image = parcel.readString()
         country = parcel.readString()
         trustScoreRank = parcel.readValue(Int::class.java.classLoader) as? Int
+        isFavorite = parcel.readValue(Boolean::class.java.classLoader) as Boolean
     }
 
     override fun toString(): String {
@@ -46,6 +48,7 @@ class Exchange() : Parcelable {
         parcel.writeString(image)
         parcel.writeString(country)
         parcel.writeValue(trustScoreRank)
+        parcel.writeValue(isFavorite)
     }
 
     override fun describeContents(): Int {
