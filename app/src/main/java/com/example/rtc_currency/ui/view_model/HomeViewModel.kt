@@ -12,9 +12,6 @@ import com.example.rtc_currency.Preferences
 import com.example.rtc_currency.database.AppDatabase
 import com.example.rtc_currency.database.models.Exchange
 import com.example.rtc_currency.ui.view.StepsInfoActivity
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -44,7 +41,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setIsFavorite(position: Int, isFavorite: Boolean) {
         exchanges.value!![position].isFavorite = isFavorite
-        Log.i("IS_FAVORITE", exchanges.value!![position].idDB.toString())
         Thread {
             db?.exchangeDAO()?.updateExchange(exchanges.value!![position])
             setExchanges(exchanges.value)
