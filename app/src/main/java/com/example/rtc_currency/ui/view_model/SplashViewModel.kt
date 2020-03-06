@@ -31,8 +31,9 @@ class SplashViewModel(application: Application) : AndroidViewModel(application) 
             else -> db!!.exchangeDAO().getAll()
         }
 
-        if (exchanges!!.isNotEmpty()) {
-            db!!.exchangeDAO().insertAll(exchanges)
+        db?.exchangeDAO()?.deteleAll()
+        if (exchanges?.isNotEmpty()) {
+            db?.exchangeDAO()?.insertAll(exchanges)
         }
 
         emit(exchanges)

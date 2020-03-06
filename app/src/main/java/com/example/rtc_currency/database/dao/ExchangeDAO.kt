@@ -1,9 +1,6 @@
 package com.example.rtc_currency.database.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.rtc_currency.database.models.Exchange
 
 @Dao
@@ -17,4 +14,7 @@ interface ExchangeDAO {
 
     @Query("SELECT * FROM Exchange WHERE name LIKE :name")
     fun getByName(name: String?): List<Exchange>
+
+    @Query("DELETE FROM exchange")
+    fun deteleAll()
 }
