@@ -69,8 +69,8 @@ class HomeActivity : BaseActivity() {
                 return true
             }
 
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                buttonSearch.collapseActionView()
+            override fun onQueryTextSubmit(textSearch: String?): Boolean {
+                homeViewModel?.onChangeTextSearch("%$textSearch%")
                 return false
             }
         })
