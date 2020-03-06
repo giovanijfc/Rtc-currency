@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName
 class Exchange() : Parcelable {
 
     @PrimaryKey(autoGenerate = true)
-    var idDB: Int? = null
+    var idDB: Long = 0
     @SerializedName("id")
     var remoteId: String? = null
     @SerializedName("name")
@@ -26,7 +26,7 @@ class Exchange() : Parcelable {
     var isFavorite: Boolean = false
 
     constructor(parcel: Parcel) : this() {
-        idDB = parcel.readValue(Int::class.java.classLoader) as? Int
+        idDB = parcel.readValue(Int::class.java.classLoader) as Long
         remoteId = parcel.readString()
         name = parcel.readString()
         yearEstablised = parcel.readValue(Int::class.java.classLoader) as? Int

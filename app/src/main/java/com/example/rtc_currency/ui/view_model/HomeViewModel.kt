@@ -44,6 +44,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setIsFavorite(position: Int, isFavorite: Boolean) {
         exchanges.value!![position].isFavorite = isFavorite
+        Log.i("IS_FAVORITE", exchanges.value!![position].idDB.toString())
         Thread {
             db?.exchangeDAO()?.updateExchange(exchanges.value!![position])
             setExchanges(exchanges.value)
