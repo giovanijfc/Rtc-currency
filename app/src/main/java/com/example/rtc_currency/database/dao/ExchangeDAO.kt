@@ -17,4 +17,7 @@ interface ExchangeDAO {
 
     @Query("DELETE FROM exchange")
     fun deteleAll()
+
+    @Update
+    fun updateExchange(exchange: Exchange)
 }

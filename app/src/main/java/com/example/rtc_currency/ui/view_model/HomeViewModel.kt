@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.provider.Settings
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
@@ -39,6 +40,14 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setExchanges(exchangesToUpdate: List<Exchange>?) {
         exchanges.postValue(exchangesToUpdate);
+    }
+
+    fun setIsFavorite(position: Int, isFavorite: Boolean) {
+        exchanges.value!![position].isFavorite = isFavorite
+        Thread {
+            db?.exchangeDAO()?.updateExchange(exchanges.value!![position])
+            setExchanges(exchanges.value)
+        }.start()
     }
 
     fun onChangeTextSearch(textSearch: String?) {

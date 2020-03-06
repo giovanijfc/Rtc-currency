@@ -1,6 +1,7 @@
 package com.example.rtc_currency.ui.view_model
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
@@ -25,14 +26,21 @@ class SplashViewModel(application: Application) : AndroidViewModel(application) 
     val exchanges: LiveData<List<Exchange>?> = liveData(Dispatchers.IO) {
         val isConnectionAvailable = Connection.isInternetAvailable(application.applicationContext)
         var exchanges: List<Exchange>?
+        var exchangesFromDB = db!!.exchangeDAO().getAll();
 
         exchanges = when {
             isConnectionAvailable -> exchangeRepo.getExchanges().toList()
-            else -> db!!.exchangeDAO().getAll()
+            else -> exchangesFromDB
         }
 
-        db?.exchangeDAO()?.deteleAll()
-        if (exchanges?.isNotEmpty()) {
+        exchanges.forEachIndexed { index, exchange ->
+            if (exchangesFromDB.isNotEmpty()) {
+                exchange.isFavorite = exchangesFromDB[index].isFavorite
+            }
+        }
+
+        if (exchanges.isNotEmpty()) {
+            db?.exchangeDAO()?.deteleAll()
             db?.exchangeDAO()?.insertAll(exchanges)
         }
 

@@ -81,8 +81,8 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun onChangeListExchangeObserver() {
-        homeViewModel?.exchanges?.observe(this, androidx.lifecycle.Observer { exchangesByName ->
-            exchangeItemListAdapter?.setExchanges(exchangesByName)
+        homeViewModel?.exchanges?.observe(this, androidx.lifecycle.Observer { exchangesUpdate ->
+            exchangeItemListAdapter?.setExchanges(exchangesUpdate)
         })
     }
 }

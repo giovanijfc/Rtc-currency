@@ -45,7 +45,16 @@ class ExchangesItemListAdapter(
                 .into(exchangeItemAdapterView.imageLogo);
         }
 
-        exchangeItemAdapterView.imageFavorite.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_star_empty))
+        val isFavoriteImage = when {
+            exchange.isFavorite -> ContextCompat.getDrawable(context, R.drawable.ic_star)
+            else -> ContextCompat.getDrawable(context, R.drawable.ic_star_empty)
+        }
+
+        exchangeItemAdapterView.imageFavorite.setImageDrawable(isFavoriteImage)
+
+        exchangeItemAdapterView.imageFavorite.setOnClickListener {
+            viewModel?.setIsFavorite(position, !exchange.isFavorite)
+        }
     }
 
     override fun getItemCount(): Int {
