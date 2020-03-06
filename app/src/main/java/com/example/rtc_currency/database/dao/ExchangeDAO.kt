@@ -14,4 +14,7 @@ interface ExchangeDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(exchanges: List<Exchange>)
+
+    @Query("SELECT * FROM Exchange WHERE name LIKE :name")
+    fun getByName(name: String?): List<Exchange>
 }

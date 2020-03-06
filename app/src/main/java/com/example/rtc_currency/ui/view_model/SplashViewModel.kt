@@ -16,7 +16,7 @@ class SplashViewModel(application: Application) : AndroidViewModel(application) 
 
     private val retrofit: Retrofit = RetrofitInitializer().retrofit
     private val exchangeRepo = ExchangeRepository(retrofit)
-    private var db: AppDatabase? = null
+    var db: AppDatabase? = null
 
     init {
         db = AppDatabase.getDB(application)

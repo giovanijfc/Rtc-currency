@@ -8,12 +8,16 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rtc_currency.R
 import com.example.rtc_currency.database.models.Exchange
+import com.example.rtc_currency.ui.view.HomeActivity
+import com.example.rtc_currency.ui.view_model.HomeViewModel
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.adapter_exchange_item.view.*
 
 class ExchangesItemListAdapter(
-    private val exchanges: List<Exchange>?,
-    private val context: Context
+    private var exchanges: List<Exchange>?,
+    private val context: Context,
+    private val viewModel: HomeViewModel?
 ) :
     RecyclerView.Adapter<ExchangesItemListAdapter.ViewHolder>() {
 
@@ -56,5 +60,10 @@ class ExchangesItemListAdapter(
         val yearFoundedIn = exchangeItemAdapterView.text_year_founded
         val live_at = exchangeItemAdapterView.text_live_at
         val imageFavorite = exchangeItemAdapterView.image_favorite
+    }
+
+    fun setExchanges(exchangesUpdated: List<Exchange>?) {
+        exchanges = exchangesUpdated
+        notifyDataSetChanged()
     }
 }

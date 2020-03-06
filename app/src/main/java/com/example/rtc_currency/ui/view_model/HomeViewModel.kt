@@ -3,16 +3,27 @@ package com.example.rtc_currency.ui.view_model
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.provider.Settings
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.liveData
 import com.example.rtc_currency.Preferences
+import com.example.rtc_currency.database.AppDatabase
 import com.example.rtc_currency.database.models.Exchange
 import com.example.rtc_currency.ui.view.StepsInfoActivity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     private val context: Context = getApplication<Application>().applicationContext
+    private var db: AppDatabase? = null
     var exchanges = MutableLiveData<List<Exchange>?>()
+
+    init {
+        db = AppDatabase.getDB(application)
+    }
 
     fun checkFirstInitializationApp() {
         val preferences = Preferences(context)
@@ -26,7 +37,18 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun setExchanges(exchangesToUpdate: List<Exchange>) {
-        exchanges = MutableLiveData(exchangesToUpdate)
+    fun setExchanges(exchangesToUpdate: List<Exchange>?) {
+        exchanges.postValue(exchangesToUpdate);
+    }
+
+    fun onChangeTextSearch(textSearch: String?) {
+        Thread {
+            val exchangesByName = when {
+                textSearch?.length === 0 -> db!!.exchangeDAO().getAll()
+                else -> db?.exchangeDAO()?.getByName(textSearch)
+            }
+
+            setExchanges(exchangesByName)
+        }.start()
     }
 }

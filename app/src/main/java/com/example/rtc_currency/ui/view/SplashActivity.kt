@@ -19,21 +19,24 @@ class SplashActivity : AppCompatActivity() {
 
         val splashViewModel = ViewModelProvider(this).get(SplashViewModel::class.java)
 
-        splashViewModel.exchanges.observe(this, Observer {
-                exchangesUpdated ->
+        splashViewModel.exchanges.observe(this, Observer { exchangesUpdated ->
 
             if (exchangesUpdated!!.isEmpty()) {
                 runOnUiThread {
                     val closeApp = {
                         exitProcess(-1)
                     }
-                    Dialog.showOk(this@SplashActivity,
+                    Dialog.showOk(
+                        this@SplashActivity,
                         getString(R.string.title_internet_connection),
-                        getString(R.string.description_internet_connection), closeApp)
+                        getString(R.string.description_internet_connection), closeApp
+                    )
                 }
             } else {
                 val homeIntent = Intent(this, HomeActivity::class.java)
-                homeIntent.putParcelableArrayListExtra("EXCHANGES", exchangesUpdated?.let { ArrayList(it) })
+                homeIntent.putParcelableArrayListExtra(
+                    "EXCHANGES",
+                    exchangesUpdated?.let { ArrayList(it) })
                 homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 startActivity(homeIntent)

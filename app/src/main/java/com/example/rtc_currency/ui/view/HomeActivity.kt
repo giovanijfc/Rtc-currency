@@ -19,6 +19,8 @@ import java.util.Observer
 
 class HomeActivity : BaseActivity() {
 
+    var homeViewModel: HomeViewModel? = null
+    var exchangeItemListAdapter: ExchangesItemListAdapter? = null
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
@@ -26,24 +28,25 @@ class HomeActivity : BaseActivity() {
 
         setToolbar(toolbar as Toolbar, getString(R.string.exchanges))
 
-        val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        homeViewModel.checkFirstInitializationApp()
+        homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        homeViewModel?.checkFirstInitializationApp()
 
-        val exchanges = intent.extras?.getParcelableArrayList<Exchange>("EXCHANGES") as List<Exchange>
-        homeViewModel.setExchanges(exchanges)
+        val exchanges =
+            intent.extras?.getParcelableArrayList<Exchange>("EXCHANGES") as List<Exchange>
+        homeViewModel?.setExchanges(exchanges)
 
-        homeViewModel.exchanges.observe(this, androidx.lifecycle.Observer {
-            exchangesUpdated ->
+        homeViewModel?.exchanges?.observe(this, androidx.lifecycle.Observer { exchangesUpdated ->
             configExchangeList(exchangesUpdated?.toList())
-            Log.i("Passou", "Aqui")
+            homeViewModel?.exchanges?.removeObservers(this)
+            onChangeListExchangeObserver()
         })
     }
 
     private fun configExchangeList(exchanges: List<Exchange>?) {
-        val recyclerView = recycle_list_exchange
-        recyclerView.adapter = ExchangesItemListAdapter(exchanges, this)
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL ,false)
-        recyclerView.layoutManager = layoutManager
+        exchangeItemListAdapter = ExchangesItemListAdapter(exchanges, this, homeViewModel)
+        recycle_list_exchange.adapter = exchangeItemListAdapter
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recycle_list_exchange.layoutManager = layoutManager
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
@@ -61,14 +64,13 @@ class HomeActivity : BaseActivity() {
         searchView.setSearchableInfo(manager.getSearchableInfo(componentName))
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextChange(newText: String?): Boolean {
-                Log.i("NEW_TEXT", newText)
+            override fun onQueryTextChange(textSearch: String?): Boolean {
+                homeViewModel?.onChangeTextSearch("%$textSearch%")
                 return true
             }
 
             override fun onQueryTextSubmit(query: String?): Boolean {
                 buttonSearch.collapseActionView()
-                Log.i("ONSUBMIT", query)
                 return false
             }
         })
@@ -76,5 +78,11 @@ class HomeActivity : BaseActivity() {
         buttonSearch.collapseActionView()
 
         return super.onPrepareOptionsMenu(menu)
+    }
+
+    private fun onChangeListExchangeObserver() {
+        homeViewModel?.exchanges?.observe(this, androidx.lifecycle.Observer { exchangesByName ->
+            exchangeItemListAdapter?.setExchanges(exchangesByName)
+        })
     }
 }
