@@ -87,7 +87,7 @@ class HomeActivity : BaseActivity() {
             }
 
             buttonSearch.collapseActionView()
-            homeViewModel?.onClickListExchangesFavorites(textSearch, isListFavoriteListExchange)
+            homeViewModel?.onClickListExchangesFavorites(isListFavoriteListExchange)
 
             return@setOnMenuItemClickListener true
         }

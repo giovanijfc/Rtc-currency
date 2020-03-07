@@ -46,7 +46,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }.start()
     }
 
-    fun onClickListExchangesFavorites(textSearch: String?, isListFavoriteExchange: Boolean) {
+    fun onClickListExchangesFavorites(isListFavoriteExchange: Boolean) {
         Thread {
             val exchangesUpdated = when {
                 isListFavoriteExchange -> db!!.exchangeDAO().getByNameAndIsFavorite(
