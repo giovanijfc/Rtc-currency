@@ -3,7 +3,6 @@ package com.example.rtc_currency.ui.view
 import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
@@ -15,12 +14,14 @@ import com.example.rtc_currency.database.models.Exchange
 import com.example.rtc_currency.ui.view.adapter.ExchangesItemListAdapter
 import com.example.rtc_currency.ui.view_model.HomeViewModel
 import kotlinx.android.synthetic.main.activity_home.*
-import java.util.Observer
 
 class HomeActivity : BaseActivity() {
 
     var homeViewModel: HomeViewModel? = null
     var exchangeItemListAdapter: ExchangesItemListAdapter? = null
+
+    var isListFavoriteListExchange: Boolean = false
+    var textSearch: String? = ""
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
@@ -55,25 +56,48 @@ class HomeActivity : BaseActivity() {
         val manager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         val buttonSearch = menu?.findItem(R.id.button_search)
         val searchView = buttonSearch?.actionView as SearchView
+        val buttonListFavoriteExchanges = menu?.findItem(R.id.button_list_favourites)
+
         searchView.setBackgroundColor(
             ContextCompat.getColor(
                 this@HomeActivity,
                 R.color.colorPrimaryDark
             )
         )
+
         searchView.setSearchableInfo(manager.getSearchableInfo(componentName))
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextChange(textSearch: String?): Boolean {
-                homeViewModel?.onChangeTextSearch("%$textSearch%")
+            override fun onQueryTextChange(newTextSearch: String?): Boolean {
+                textSearch = newTextSearch
+
+                homeViewModel?.onChangeTextSearch("%$newTextSearch%", isListFavoriteListExchange)
                 return true
             }
 
-            override fun onQueryTextSubmit(textSearch: String?): Boolean {
-                homeViewModel?.onChangeTextSearch("%$textSearch%")
+            override fun onQueryTextSubmit(newTextSearch: String?): Boolean {
+                textSearch = newTextSearch
+
+                homeViewModel?.onChangeTextSearch("%$newTextSearch%", isListFavoriteListExchange)
                 return false
             }
         })
+
+        buttonListFavoriteExchanges.setOnMenuItemClickListener {
+            isListFavoriteListExchange = !isListFavoriteListExchange
+            buttonListFavoriteExchanges.icon = when {
+                isListFavoriteListExchange -> ContextCompat.getDrawable(
+                    this@HomeActivity,
+                    R.drawable.ic_star
+                )
+                else -> ContextCompat.getDrawable(this@HomeActivity, R.drawable.ic_star_empty)
+            }
+
+            buttonSearch.collapseActionView()
+            homeViewModel?.onClickListExchangesFavorites(isListFavoriteListExchange)
+
+            return@setOnMenuItemClickListener true
+        }
 
         buttonSearch.collapseActionView()
 
