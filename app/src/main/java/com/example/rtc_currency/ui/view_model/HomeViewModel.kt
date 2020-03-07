@@ -39,7 +39,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                     textSearch,
                     true
                 )
-                textSearch?.equals("%%", true)!! -> db!!.exchangeDAO().getAll()
                 else -> db?.exchangeDAO()?.getByName(textSearch)
             }
 
@@ -47,10 +46,13 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }.start()
     }
 
-    fun onClickListExchangesFavorites(isListFavoriteExchange: Boolean) {
+    fun onClickListExchangesFavorites(textSearch: String?, isListFavoriteExchange: Boolean) {
         Thread {
             val exchangesUpdated = when {
-                isListFavoriteExchange -> exchanges.value?.filter { it.isFavorite === true }
+                isListFavoriteExchange -> db!!.exchangeDAO().getByNameAndIsFavorite(
+                    "%%",
+                    true
+                )
                 else -> db?.exchangeDAO()?.getAll()
             }
 
