@@ -12,7 +12,7 @@ class ListCoinsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.activity_list_coins)
 
         listCoinsViewModel = ViewModelProvider(this).get(ListCoinsViewModel::class.java)
     }

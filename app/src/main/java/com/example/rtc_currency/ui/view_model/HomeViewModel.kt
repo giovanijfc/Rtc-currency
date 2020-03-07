@@ -8,6 +8,8 @@ import androidx.lifecycle.MutableLiveData
 import com.example.rtc_currency.Preferences
 import com.example.rtc_currency.database.AppDatabase
 import com.example.rtc_currency.database.models.Exchange
+import com.example.rtc_currency.ui.view.HomeActivity
+import com.example.rtc_currency.ui.view.ListCoinsActivity
 import com.example.rtc_currency.ui.view.StepsInfoActivity
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
@@ -58,6 +60,14 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
             setExchanges(exchangesUpdated)
         }.start()
+    }
+
+    fun toActivityCoinsList(context: Context, exchange: Exchange) {
+        val listCoinsIntent = Intent(context, ListCoinsActivity::class.java)
+        listCoinsIntent.putExtra("EXCHANGE", exchange)
+        listCoinsIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+        context.startActivity(listCoinsIntent)
     }
 
     fun setExchanges(exchangesToUpdate: List<Exchange>?) {

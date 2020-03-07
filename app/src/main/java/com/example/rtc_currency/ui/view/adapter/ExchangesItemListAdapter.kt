@@ -1,6 +1,8 @@
 package com.example.rtc_currency.ui.view.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +10,11 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rtc_currency.R
 import com.example.rtc_currency.database.models.Exchange
+import com.example.rtc_currency.ui.view.HomeActivity
 import com.example.rtc_currency.ui.view_model.HomeViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.adapter_exchange_item.view.*
+import java.util.ArrayList
 
 class ExchangesItemListAdapter(
     private var exchanges: List<Exchange>?,
@@ -53,6 +57,10 @@ class ExchangesItemListAdapter(
         exchangeItemAdapterView.imageFavorite.setOnClickListener {
             viewModel?.setIsFavorite(position, !exchange.isFavorite)
         }
+
+        exchangeItemAdapterView.mainLayout.setOnClickListener {
+            viewModel?.toActivityCoinsList(context, exchange)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -67,6 +75,7 @@ class ExchangesItemListAdapter(
         val yearFoundedIn = exchangeItemAdapterView.text_year_founded
         val live_at = exchangeItemAdapterView.text_live_at
         val imageFavorite = exchangeItemAdapterView.image_favorite
+        val mainLayout = exchangeItemAdapterView.main_layout
     }
 
     fun setExchanges(exchangesUpdated: List<Exchange>?) {
