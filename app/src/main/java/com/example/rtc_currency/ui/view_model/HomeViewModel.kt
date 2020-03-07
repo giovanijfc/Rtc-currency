@@ -35,22 +35,13 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun setExchanges(exchangesToUpdate: List<Exchange>?) {
-        exchanges.postValue(exchangesToUpdate);
-    }
-
-    fun setIsFavorite(position: Int, isFavorite: Boolean) {
-        exchanges.value!![position].isFavorite = isFavorite
-        Thread {
-            db?.exchangeDAO()?.updateExchange(exchanges.value!![position])
-            setExchanges(exchanges.value)
-        }.start()
-    }
-
     fun onChangeTextSearch(textSearch: String?, isListFavoriteExchange: Boolean) {
         Thread {
             val exchangesByName = when {
-                isListFavoriteExchange -> db!!.exchangeDAO().getByNameAndIsFavorite(textSearch, true)
+                isListFavoriteExchange -> db!!.exchangeDAO().getByNameAndIsFavorite(
+                    textSearch,
+                    true
+                )
                 textSearch?.equals("%%", true)!! -> db!!.exchangeDAO().getAll()
                 else -> db?.exchangeDAO()?.getByName(textSearch)
             }
@@ -62,11 +53,23 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     fun onClickListExchangesFavorites(isListFavoriteExchange: Boolean) {
         Thread {
             val exchangesUpdated = when {
-                isListFavoriteExchange -> exchanges.value?.filter { it.isFavorite === true  }
+                isListFavoriteExchange -> exchanges.value?.filter { it.isFavorite === true }
                 else -> db?.exchangeDAO()?.getAll()
             }
 
             setExchanges(exchangesUpdated)
+        }.start()
+    }
+
+    fun setExchanges(exchangesToUpdate: List<Exchange>?) {
+        exchanges.postValue(exchangesToUpdate);
+    }
+
+    fun setIsFavorite(position: Int, isFavorite: Boolean) {
+        exchanges.value!![position].isFavorite = isFavorite
+        Thread {
+            db?.exchangeDAO()?.updateExchange(exchanges.value!![position])
+            setExchanges(exchanges.value)
         }.start()
     }
 }

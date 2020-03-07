@@ -43,13 +43,6 @@ class HomeActivity : BaseActivity() {
         })
     }
 
-    private fun configExchangeList(exchanges: List<Exchange>?) {
-        exchangeItemListAdapter = ExchangesItemListAdapter(exchanges, this, homeViewModel)
-        recycle_list_exchange.adapter = exchangeItemListAdapter
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        recycle_list_exchange.layoutManager = layoutManager
-    }
-
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_toolbar_search, menu)
 
@@ -102,6 +95,13 @@ class HomeActivity : BaseActivity() {
         buttonSearch.collapseActionView()
 
         return super.onPrepareOptionsMenu(menu)
+    }
+
+    private fun configExchangeList(exchanges: List<Exchange>?) {
+        exchangeItemListAdapter = ExchangesItemListAdapter(exchanges, this, homeViewModel)
+        recycle_list_exchange.adapter = exchangeItemListAdapter
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recycle_list_exchange.layoutManager = layoutManager
     }
 
     private fun onChangeListExchangeObserver() {
