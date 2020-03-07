@@ -2,8 +2,10 @@ package com.example.rtc_currency.ui.view
 
 import android.app.SearchManager
 import android.content.Context
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
@@ -107,6 +109,15 @@ class HomeActivity : BaseActivity() {
     private fun onChangeListExchangeObserver() {
         homeViewModel?.exchanges?.observe(this, androidx.lifecycle.Observer { exchangesUpdate ->
             exchangeItemListAdapter?.setExchanges(exchangesUpdate)
+
+            recycle_list_exchange.visibility = when {
+                exchangesUpdate?.size === 0 -> View.GONE
+                else -> View.VISIBLE
+            }
+            text_empty_list.visibility = when {
+                exchangesUpdate?.size === 0 -> View.VISIBLE
+                else -> View.GONE
+            }
         })
     }
 }
