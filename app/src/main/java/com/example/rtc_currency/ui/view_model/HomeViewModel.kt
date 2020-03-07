@@ -3,11 +3,8 @@ package com.example.rtc_currency.ui.view_model
 import android.app.Application
 import android.content.Context
 import android.content.Intent
-import android.provider.Settings
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.liveData
 import com.example.rtc_currency.Preferences
 import com.example.rtc_currency.database.AppDatabase
 import com.example.rtc_currency.database.models.Exchange

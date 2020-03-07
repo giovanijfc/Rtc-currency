@@ -8,10 +8,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rtc_currency.R
 import com.example.rtc_currency.database.models.Exchange
-import com.example.rtc_currency.ui.view.HomeActivity
 import com.example.rtc_currency.ui.view_model.HomeViewModel
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.adapter_exchange_item.view.*
 
 class ExchangesItemListAdapter(
