@@ -8,7 +8,6 @@ import androidx.lifecycle.MutableLiveData
 import com.example.rtc_currency.Preferences
 import com.example.rtc_currency.database.AppDatabase
 import com.example.rtc_currency.database.models.Exchange
-import com.example.rtc_currency.ui.view.HomeActivity
 import com.example.rtc_currency.ui.view.ListCoinsActivity
 import com.example.rtc_currency.ui.view.StepsInfoActivity
 
