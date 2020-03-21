@@ -18,7 +18,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:src="@color/text_black" />
+        android:src="@drawable/ic_error" />
 
     <com.example.rtc_currency.components.RTCTextBold
         android:id="@+id/text_name_currency"
@@ -39,13 +39,14 @@
         android:layout_centerHorizontal="true">
 
         <com.example.rtc_currency.components.RTCText
+            android:id="@+id/text_prefix"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_name_currency"
             android:text="$"
             android:textColor="@color/white"
-            android:layout_marginRight="1dp"
-            android:textSize="@dimen/medium_font" />
+            android:layout_marginRight="3dp"
+            android:textSize="13sp" />
 
         <com.example.rtc_currency.components.RTCTextBold
             android:id="@+id/last_price"

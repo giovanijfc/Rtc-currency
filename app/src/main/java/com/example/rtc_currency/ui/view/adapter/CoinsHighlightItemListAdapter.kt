@@ -30,8 +30,9 @@ class CoinsHighlightItemListAdapter(
     override fun onBindViewHolder(coinHighlightAdapterView: ViewHolder, position: Int) {
         val coin = coins?.get(position)
 
-        coinHighlightAdapterView.textName.text = coin?.base + "/" + coin?.target
+        coinHighlightAdapterView.textName.text = coin?.base
         coinHighlightAdapterView.lastPrice.text = coin?.lastPrice
+        coinHighlightAdapterView.textPrefixPrice.text = coin?.target
     }
 
     override fun getItemCount(): Int {
@@ -43,5 +44,6 @@ class CoinsHighlightItemListAdapter(
         val image = coinHighlightAdapterView.image_currecy
         val textName = coinHighlightAdapterView.text_name_currency
         val lastPrice = coinHighlightAdapterView.last_price
+        val textPrefixPrice = coinHighlightAdapterView.text_prefix
     }
 }
