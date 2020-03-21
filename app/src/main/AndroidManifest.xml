@@ -27,9 +27,7 @@
             android:name=".ui.view.StepsInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity
-            android:name=".ui.view.ListCoinsActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.view.ListCoinsActivity" />
 
     </application>
 

@@ -30,7 +30,7 @@ class HomeActivity : BaseActivity() {
         super.onCreate(bundle)
         setContentView(R.layout.activity_home)
 
-        setToolbar(toolbar as Toolbar, getString(R.string.exchanges))
+        setToolbar(toolbar as Toolbar, getString(R.string.exchanges), false)
 
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         homeViewModel?.checkFirstInitializationApp()

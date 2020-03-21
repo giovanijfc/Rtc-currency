@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar_main"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/colorPrimary"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/button_back"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginRight="@dimen/high_margin"
+        android:src="@drawable/ic_back" />
+
+    <com.example.rtc_currency.components.RTCTextBold
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exchange"
+        android:textColor="@color/white"
+        android:textSize="@dimen/high_font" />
+
+
+</androidx.appcompat.widget.Toolbar>
