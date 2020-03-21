@@ -4,6 +4,7 @@ import android.app.SearchManager
 import android.content.Context
 import android.opengl.Visibility
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import androidx.appcompat.widget.SearchView

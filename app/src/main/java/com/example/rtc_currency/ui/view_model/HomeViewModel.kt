@@ -3,6 +3,7 @@ package com.example.rtc_currency.ui.view_model
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.rtc_currency.Preferences
@@ -74,10 +75,12 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun setIsFavorite(position: Int, isFavorite: Boolean) {
-        exchanges.value!![position].isFavorite = isFavorite
+        var exchangesToUpdate = exchanges.value
+        exchangesToUpdate!![position].isFavorite = isFavorite
+
         Thread {
-            db?.exchangeDAO()?.updateExchange(exchanges.value!![position])
-            setExchanges(exchanges.value)
+            db?.exchangeDAO()?.updateExchange(exchangesToUpdate!![position])
+            setExchanges(exchangesToUpdate)
         }.start()
     }
 }
