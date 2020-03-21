@@ -23,8 +23,8 @@ class ListCoinsActivity : AppCompatActivity() {
 
         listCoinsViewModel?.setExchange(exchange)
 
-        listCoinsViewModel?.coins?.observe(this, Observer {
-            Log.d("COINS_DTO", it.toString())
+        listCoinsViewModel?.exchangeCoins?.observe(this, Observer { exchangeCoins ->
+            Log.d("COINS_DTO", exchangeCoins.toString())
         })
     }
 }

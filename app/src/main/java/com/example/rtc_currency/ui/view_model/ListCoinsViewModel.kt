@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import com.example.rtc_currency.database.AppDatabase
 import com.example.rtc_currency.database.models.Exchange
+import com.example.rtc_currency.database.models.ExchangeCoins
 import com.example.rtc_currency.repository.CoinRepository
 import com.example.rtc_currency.repository.ExchangeRepository
 import com.example.rtc_currency.services.CoinService
@@ -20,21 +21,21 @@ class ListCoinsViewModel(application: Application) : AndroidViewModel(applicatio
 
     private val retrofit: Retrofit = RetrofitInitializer().retrofit
     private var db: AppDatabase? = null
-    private val exchangeRepo = ExchangeRepository(retrofit)
     private val coinRepo = CoinRepository(retrofit)
 
-    var exchange = MutableLiveData<Exchange?>()
-    val coins: LiveData<List<String>?> = liveData(Dispatchers.IO) {
-        val coins  = coinRepo.getAllCoinsIds().toList()
-
-        Log.d("COINS_DTO", coins.toString())
-    }
+    private var exchange: Exchange? = null
 
     init {
         db = AppDatabase.getDB(application)
     }
 
-    fun setExchange(exchangeUpdated: Exchange?) {
-        exchange.postValue(exchangeUpdated)
+    val exchangeCoins: LiveData<ExchangeCoins?> = liveData(Dispatchers.Main) {
+        val exchangeCoins = coinRepo.getAllExchangeCoins(exchange?.remoteId)
+
+        Log.i("ExchangeCoins", exchangeCoins.toString())
+    }
+
+    fun setExchange(exchangeToUpdate: Exchange?) {
+        exchange = exchangeToUpdate
     }
 }

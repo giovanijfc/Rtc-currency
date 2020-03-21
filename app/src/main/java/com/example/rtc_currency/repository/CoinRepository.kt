@@ -8,7 +8,6 @@ class CoinRepository(retrofit: Retrofit) {
 
     private val service = retrofit.create(CoinService::class.java)
 
-    suspend fun getAllCoinsIds() = service.getAllCoinsIds()
-
+    suspend fun getAllExchangeCoins(exchangeId: String?) = service.getAllCoinsByExchangeId(exchangeId)
 
 }
