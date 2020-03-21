@@ -29,10 +29,10 @@ class ListCoinsViewModel(application: Application) : AndroidViewModel(applicatio
         db = AppDatabase.getDB(application)
     }
 
-    val exchangeCoins: LiveData<ExchangeCoins?> = liveData(Dispatchers.Main) {
+    val exchangeCoins: LiveData<ExchangeCoins> = liveData(Dispatchers.Main) {
         val exchangeCoins = coinRepo.getAllExchangeCoins(exchange?.remoteId)
 
-        Log.i("ExchangeCoins", exchangeCoins.toString())
+        emit(exchangeCoins)
     }
 
     fun setExchange(exchangeToUpdate: Exchange?) {

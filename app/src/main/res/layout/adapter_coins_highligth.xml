@@ -9,7 +9,9 @@
     android:paddingTop="@dimen/default_margin"
     android:gravity="center"
     android:paddingRight="@dimen/medium_margin"
-    android:paddingBottom="@dimen/default_margin">
+    android:paddingBottom="@dimen/default_margin"
+    android:layout_marginLeft="@dimen/low_margin"
+    android:layout_marginRight="@dimen/low_margin">
 
     <ImageView
         android:id="@+id/image_currecy"
@@ -26,6 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/low_margin"
         android:text="BITCAO"
+        android:textColor="@color/white"
         android:textSize="13sp" />
 
     <LinearLayout
@@ -40,15 +43,18 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_name_currency"
             android:text="$"
+            android:textColor="@color/white"
             android:layout_marginRight="1dp"
             android:textSize="@dimen/medium_font" />
 
         <com.example.rtc_currency.components.RTCTextBold
+            android:id="@+id/last_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/low_margin"
             android:text="9876,00"
+            android:textColor="@color/white"
             android:textSize="22sp" />
     </LinearLayout>
 

@@ -12,11 +12,12 @@
         android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/coin_highlight_recycle_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             tools:itemCount="4"
-            tools:listitem="@layout/adapter_currency_highligth" />
+            tools:listitem="@layout/adapter_coins_highligth" />
 
 
     </RelativeLayout>
