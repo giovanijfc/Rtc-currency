@@ -2,6 +2,7 @@ package com.example.rtc_currency.ui.view
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -36,9 +37,10 @@ class ListCoinsActivity : AppCompatActivity() {
                 position < 4
             }
 
-            Log.i("CoinsHighLight", coinsHighlight.toString())
-
             configCoinsHighlightList(coinsHighlight)
+
+            loading.visibility = View.GONE
+            area_highlight_currency.visibility = View.VISIBLE
         })
     }
 

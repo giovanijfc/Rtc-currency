@@ -49,6 +49,8 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:2.2.3" // For Kotlin use kapt instead of annotationProcessor
 
     compile "com.squareup.picasso:picasso:2.4.0"
+    compile 'com.airbnb.android:lottie:2.5.0-rc1'
+    compile 'com.android.support:design:27.0.2'
 
     testImplementation 'junit:junit:4.12'
     testImplementation "androidx.room:room-testing:2.2.3"
