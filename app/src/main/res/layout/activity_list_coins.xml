@@ -25,7 +25,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar_coins"
         android:padding="@dimen/default_padding"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <RelativeLayout
             android:id="@+id/area_highlight_currency"
