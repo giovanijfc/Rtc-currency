@@ -19,6 +19,7 @@ import com.example.rtc_currency.database.models.Exchange
 import com.example.rtc_currency.database.models.ExchangeCoins
 import com.example.rtc_currency.ui.view.adapter.CoinsHighlightItemListAdapter
 import com.example.rtc_currency.ui.view.adapter.ExchangesItemListAdapter
+import com.example.rtc_currency.ui.view.adapter.OtherCoinsItemListAdapter
 import com.example.rtc_currency.ui.view_model.ListCoinsViewModel
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_list_coins.*
@@ -29,6 +30,7 @@ class ListCoinsActivity : BaseActivity() {
     var listCoinsViewModel: ListCoinsViewModel? = null
     var exchange: Exchange? = null
     var coinsHighlightItemListAdapter: CoinsHighlightItemListAdapter? = null
+    var otherCoinsItemListAdapter: OtherCoinsItemListAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,9 +50,12 @@ class ListCoinsActivity : BaseActivity() {
             var coinsHighlight = exchangeCoins?.coins?.filterIndexed { position, coin ->
                 position < 4
             }
-
             configCoinsHighlightList(coinsHighlight)
-            Log.i("Highlight", coinsHighlight.toString());
+
+            exchangeCoins?.coins = exchangeCoins?.coins?.filterIndexed { position, coin ->
+                position >= 4
+            }
+            configOtherCoinsList(exchangeCoins?.coins)
 
             loading.visibility = View.GONE
             main_layout.visibility = View.VISIBLE
@@ -70,5 +75,13 @@ class ListCoinsActivity : BaseActivity() {
         coin_highlight_recycle_view.adapter = coinsHighlightItemListAdapter
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         coin_highlight_recycle_view.layoutManager = layoutManager
+    }
+
+    private fun configOtherCoinsList(coins: List<Coin>?) {
+        otherCoinsItemListAdapter =
+            OtherCoinsItemListAdapter(coins, this, listCoinsViewModel)
+        other_coins_recycle_View.adapter = otherCoinsItemListAdapter
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        other_coins_recycle_View.layoutManager = layoutManager
     }
 }

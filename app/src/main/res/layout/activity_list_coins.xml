@@ -76,7 +76,15 @@
                 android:textColor="@color/gray"
                 android:textSize="@dimen/high_font" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/other_coins_recycle_View"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_description_other_coins"
+                android:orientation="horizontal"
+                tools:itemCount="4"
+                tools:listitem="@layout/adapter_other_coins" />
+
         </RelativeLayout>
     </RelativeLayout>
-
 </RelativeLayout>
