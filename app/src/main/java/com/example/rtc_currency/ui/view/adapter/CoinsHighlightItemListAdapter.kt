@@ -9,6 +9,7 @@ import com.example.rtc_currency.R
 import com.example.rtc_currency.database.models.Coin
 import com.example.rtc_currency.database.models.Exchange
 import com.example.rtc_currency.ui.view_model.ListCoinsViewModel
+import com.example.rtc_currency.utils.CriptoCurrency
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.adapter_coins_highligth.view.*
 import kotlinx.android.synthetic.main.adapter_exchange_item.view.*
@@ -31,13 +32,16 @@ class CoinsHighlightItemListAdapter(
     override fun onBindViewHolder(coinHighlightAdapterView: ViewHolder, position: Int) {
         val coin = coins?.get(position)
 
+        val numberCaseDecimal = CriptoCurrency.getNumberCaseDecimalFromCoin(coin?.target)
+
         coinHighlightAdapterView.textName.text = coin?.base
-        coinHighlightAdapterView.lastPrice.text = coin?.lastPrice
+        coinHighlightAdapterView.lastPrice.text =
+            String.format("%." + numberCaseDecimal + "f", coin?.lastPrice?.toFloat())
         coinHighlightAdapterView.textPrefixPrice.text = coin?.target
 
         if (coin?.image !== null) {
             Picasso.with(context)
-                .load(coin?.image)
+                .load(coin.image)
                 .into(coinHighlightAdapterView.image);
         }
     }
