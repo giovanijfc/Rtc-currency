@@ -4,21 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/low_margin"
-    android:layout_marginRight="@dimen/default_margin"
     android:layout_marginBottom="@dimen/low_margin"
     android:background="@drawable/shape_button_gradient_blue_rounded"
     android:paddingLeft="@dimen/medium_margin"
     android:paddingTop="@dimen/default_margin"
     android:paddingRight="@dimen/medium_margin"
     android:paddingBottom="@dimen/default_margin">
-
-    <ImageView
-        android:id="@+id/image_currecy"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginRight="@dimen/default_margin"
-        android:src="@drawable/ic_error" />
 
     <com.example.rtc_currency.components.RTCTextBold
         android:id="@+id/text_name_currency"
