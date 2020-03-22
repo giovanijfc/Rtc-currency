@@ -50,9 +50,10 @@ class ListCoinsActivity : BaseActivity() {
             }
 
             configCoinsHighlightList(coinsHighlight)
+            Log.i("Highlight", coinsHighlight.toString());
 
             loading.visibility = View.GONE
-            area_highlight_currency.visibility = View.VISIBLE
+            main_layout.visibility = View.VISIBLE
         })
     }
 

@@ -21,8 +21,9 @@ class Coin {
     var coinId: String? = null
     @SerializedName("target_coin_id")
     var targetCoinId: String? = null
+    var image: String? = null
 
     override fun toString(): String {
-        return "Coin(id=$id, base=$base, target=$target, lastPrice=$lastPrice, volume=$volume, trustForExchange=$trustForExchange, coindId=$coinId, targetId=$targetCoinId)"
+        return "Coin(id=$id, base=$base, target=$target, lastPrice=$lastPrice, volume=$volume, trustForExchange=$trustForExchange, coinId=$coinId, targetCoinId=$targetCoinId, image=$image)"
     }
 }

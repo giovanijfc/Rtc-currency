@@ -22,4 +22,6 @@
     <string name="title_internet_connection">Conexión a internet</string>
     <string name="description_internet_connection">Comprueba tu conexión a Internet y vuelve de nuevo.</string>
     <string name="none_exchange_list">NINGUN INTERCAMBIO EN LA LISTA…</string>
+    <string name="best_movimentations_coin">Movimientos de mayor volumen</string>
+    <string name="other_coins">Otras monedas</string>
 </resources>

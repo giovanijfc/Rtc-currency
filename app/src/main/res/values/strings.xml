@@ -21,4 +21,6 @@
     <string name="title_internet_connection">Internet connection</string>
     <string name="description_internet_connection">Check your internet connection and come back again.</string>
     <string name="none_exchange_list">NONE EXCHANGE IN LIST…</string>
+    <string name="best_movimentations_coin">The best movimentations by volume</string>
+    <string name="other_coins">Other coins</string>
 </resources>

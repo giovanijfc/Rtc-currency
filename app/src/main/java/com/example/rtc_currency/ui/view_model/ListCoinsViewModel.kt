@@ -32,6 +32,15 @@ class ListCoinsViewModel(application: Application) : AndroidViewModel(applicatio
     val exchangeCoins: LiveData<ExchangeCoins> = liveData(Dispatchers.Main) {
         val exchangeCoins = coinRepo.getAllExchangeCoins(exchange?.remoteId)
 
+        var coinsHighlight = exchangeCoins?.coins?.filterIndexed { position, coin ->
+            position < 4
+        }
+
+        coinsHighlight?.forEachIndexed { index, coin ->
+            val coinDetails = coinRepo.getCoinDetails(coin.coinId)
+            coinsHighlight?.get(index)?.image = coinDetails.image?.large
+        }
+
         emit(exchangeCoins)
     }
 

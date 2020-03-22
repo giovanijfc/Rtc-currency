@@ -10,33 +10,71 @@
         android:id="@+id/toolbar_coins"
         layout="@layout/component_toolbar_back" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="loading.json"
+        app:lottie_loop="true" />
+
     <RelativeLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar_coins">
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/loading"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_centerInParent="true"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="loading.json"
-            app:lottie_loop="true" />
+        android:layout_below="@id/toolbar_coins"
+        android:padding="@dimen/default_padding"
+        android:visibility="gone">
 
         <RelativeLayout
             android:id="@+id/area_highlight_currency"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
+            android:layout_height="wrap_content">
+
+            <com.example.rtc_currency.components.RTCTextBold
+                android:id="@+id/text_description_highlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/best_movimentations_coin"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/high_font" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/coin_highlight_recycle_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/text_description_highlight"
                 android:orientation="horizontal"
                 tools:itemCount="4"
                 tools:listitem="@layout/adapter_coins_highligth" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/area_highlight_currency"
+            android:layout_marginLeft="@dimen/low_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginRight="@dimen/low_margin"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:background="@color/gray" />
+
+        <RelativeLayout
+            android:id="@+id/area_other_coins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separator">
+
+            <com.example.rtc_currency.components.RTCTextBold
+                android:id="@+id/text_description_other_coins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other_coins"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/high_font" />
 
         </RelativeLayout>
     </RelativeLayout>

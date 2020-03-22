@@ -9,6 +9,7 @@ import com.example.rtc_currency.R
 import com.example.rtc_currency.database.models.Coin
 import com.example.rtc_currency.database.models.Exchange
 import com.example.rtc_currency.ui.view_model.ListCoinsViewModel
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.adapter_coins_highligth.view.*
 import kotlinx.android.synthetic.main.adapter_exchange_item.view.*
 
@@ -33,6 +34,12 @@ class CoinsHighlightItemListAdapter(
         coinHighlightAdapterView.textName.text = coin?.base
         coinHighlightAdapterView.lastPrice.text = coin?.lastPrice
         coinHighlightAdapterView.textPrefixPrice.text = coin?.target
+
+        if (coin?.image !== null) {
+            Picasso.with(context)
+                .load(coin?.image)
+                .into(coinHighlightAdapterView.image);
+        }
     }
 
     override fun getItemCount(): Int {
